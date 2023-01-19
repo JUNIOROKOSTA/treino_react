@@ -1,0 +1,50 @@
+.container{
+  min-height: 100vh;
+  background: rgb(187, 187, 187);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+
+}
+
+.button-container{
+  min-height: 100px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.text-input-container{
+  border: 5px solid rgb(179, 179, 255);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.posts{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.post{
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 100ms ease-in-out;
+
+}
+
+.post:hover{
+  transform: scale(1.1);
+}
+
+.post img{
+  max-width: 100%;
+  align-items: center;
+  padding: 10px;
+}
+
+.post-content{
+  padding: 30px;
+
+}

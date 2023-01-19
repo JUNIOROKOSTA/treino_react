@@ -1,0 +1,12 @@
+.button-next{
+    background: rgb(6, 6, 126);
+    color: aliceblue;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.button-next:disabled{
+    background: rgb(171, 171, 255);
+}
