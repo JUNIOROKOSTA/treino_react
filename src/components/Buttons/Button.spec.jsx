@@ -1,15 +1,15 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { Button } from "./Button";
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Button } from './Button';
 
-describe('<Button />', ()=>{
+describe('<Button />', () => {
   it('Should render the button with the text "Click Next"', () => {
-    render(<Button text="Click Next"/>);
-    expect.assertions(2)
-    const btn = screen.getByRole('button',{name: /click next/i})
+    render(<Button text="Click Next" />);
+    expect.assertions(2);
+    const btn = screen.getByRole('button', { name: /click next/i });
 
     expect(btn).toBeInTheDocument();
-    expect(btn).toHaveAttribute("class", 'button-next')
+    expect(btn).toHaveAttribute('class', 'button-next');
   });
 
   it('Should call one function on click button', () => {
@@ -18,7 +18,7 @@ describe('<Button />', ()=>{
 
     render(<Button text="Click Next" eventClick={func} />);
 
-    const button = screen.getByRole('button',{name: /click next/i});
+    const button = screen.getByRole('button', { name: /click next/i });
 
     // gera um evento de click no elemento/componente.
     userEvent.click(button);
@@ -27,12 +27,11 @@ describe('<Button />', ()=>{
     expect(func).toHaveBeenCalledTimes(1);
   });
 
-it('Should be disabled when disabled is true', () => {
-
+  it('Should be disabled when disabled is true', () => {
     render(<Button text="Click Next" disabled={true} />);
 
-    const button = screen.getByRole('button',{name: /click next/i});
+    const button = screen.getByRole('button', { name: /click next/i });
 
     expect(button).toBeDisabled();
   });
-})
+});
