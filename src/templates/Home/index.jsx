@@ -33,7 +33,7 @@ export const Home = () => {
   }, [load_Posts, postsPerPage]);
 
   const load_more_posts = () => {
-    console.log('load_more_posts foi chamado');
+    // console.log('load_more_posts foi chamado');
 
     const nextPage = page + postsPerPage;
     const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage);
@@ -69,7 +69,9 @@ export const Home = () => {
 
       {!searchPosts && <Button text={'Click Next'} eventClick={load_more_posts} disabled={disabled} />}
 
-      <Posts posts={filterPosts} />
+      {filterPosts.length === 0 && <p>Resultado não encontrado</p>}
+
+      {filterPosts.length > 0 && <Posts posts={filterPosts} />}
     </section>
   );
 };
